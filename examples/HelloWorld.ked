@@ -3,4 +3,9 @@ ked HelloWorld {
     bai main () {
         saysI("hello world") like
     }
+
+    bai objects() {
+        //gaff is an object
+        here Gaff example = brandNew Gaff() like
+    }
 }

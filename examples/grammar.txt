@@ -1,12 +1,15 @@
 
 Variable Declaration:
-'remember <type> <identifier = name> [= value] like'
+'here <type> <identifier = name> [= value] like'
 
 class declaration:
 'ked <identifier>'
 
+object declaration:
+'brandNew gaff(<identifier = name>) like'
+
 <type>
-primitives: number, aGeorgeBoolean, Shtring,
+primitives: number(int), notions(long), aGeorgeBoolean, Shtring,
 
 Print statement:
 'saysI <value> like'
