@@ -37,11 +37,12 @@ WHITESPACE = [\ \t\r\n]+
 <YYINITIAL> "boolean" { return new MinijavaToken (MinijavaSymbol.BOOLEAN, yychar, yychar + 7, yytext(), yyline); }
 <YYINITIAL> "float" { return new MinijavaToken (MinijavaSymbol.FLOAT, yychar, yychar + 5, yytext(), yyline); }
 <YYINITIAL> "void" { return new MinijavaToken (MinijavaSymbol.VOID, yychar, yychar + 4, yytext(), yyline); }
-<YYINITIAL> "null" { return new MinijavaToken (MinijavaSymbol.NULL_LITERAL, yychar, yychar + 4, yytext(), yyline); }
+<YYINITIAL> "nattin" { return new MinijavaToken (MinijavaSymbol.NULL_LITERAL, yychar, yychar + 6, yytext(), yyline); }
 <YYINITIAL> "eh" { return new MinijavaToken (MinijavaSymbol.IF, yychar, yychar + 2, yytext(), yyline); }
-<YYINITIAL> "orEvenJust" { return new MinijavaToken (MinijavaSymbol.ELSE, yychar, yychar + 4, yytext(), yyline); }
-<YYINITIAL> "true" { return new MinijavaToken (MinijavaSymbol.BOOLEAN_LITERAL, yychar, yychar + 4, new Boolean (yytext()), yyline); }
-<YYINITIAL> "false" { return new MinijavaToken (MinijavaSymbol.BOOLEAN_LITERAL, yychar, yychar + 5, new Boolean (yytext()), yyline); }
+<YYINITIAL> "orEh" { return new MinijavaToken (MinijavaSymbol.ELSEIF, yychar, yychar + 4, yytext(), yyline); }
+<YYINITIAL> "orEvenJust" { return new MinijavaToken (MinijavaSymbol.ELSE, yychar, yychar + 10, yytext(), yyline); }
+<YYINITIAL> "gospel" { return new MinijavaToken (MinijavaSymbol.BOOLEAN_LITERAL, yychar, yychar + 6, new Boolean (yytext()), yyline); }
+<YYINITIAL> "bull" { return new MinijavaToken (MinijavaSymbol.BOOLEAN_LITERAL, yychar, yychar + 4, new Boolean (yytext()), yyline); }
 <YYINITIAL> "[" { return new MinijavaToken (MinijavaSymbol.LBRACK, yychar, yychar + 1, yytext(), yyline); }
 <YYINITIAL> "]" { return new MinijavaToken (MinijavaSymbol.RBRACK, yychar, yychar + 1, yytext(), yyline); }
 <YYINITIAL> "{" { return new MinijavaToken (MinijavaSymbol.LBRACE, yychar, yychar + 1, yytext(), yyline); }

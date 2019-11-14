@@ -3,11 +3,17 @@
  * This input IS valid and should parse correctly
  */
 {
-    a = f;
+    a = 5;
+    b = gospel;
+
     eh (a == 2) {
       a = 4
-    } orEvenJust {
+    } 
+    orEh (b == bull) {
+      a = 7
+    }
+    orEvenJust {
       a = 4
-    };
+    }
 
 }
