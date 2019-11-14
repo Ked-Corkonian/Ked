@@ -1,0 +1,13 @@
+/**
+ * Sample input 
+ * This input IS valid and should parse correctly
+ */
+{
+    a = f;
+    eh (a == 2) {
+      a = 4
+    } orEvenJust {
+      a = 4
+    };
+
+}
