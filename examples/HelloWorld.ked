@@ -1,0 +1,6 @@
+ked HelloWorld {
+
+    bai main () {
+        saysI("hello world") like
+    }
+}

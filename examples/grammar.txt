@@ -1,0 +1,12 @@
+
+Variable Declaration:
+'remember <type> <identifier = name> [= value] like'
+
+class declaration:
+'ked <identifier>'
+
+<type>
+primitives: number, aGeorgeBoolean, Shtring,
+
+Print statement:
+'saysI <value> like'
