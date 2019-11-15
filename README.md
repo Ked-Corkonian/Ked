@@ -37,7 +37,7 @@ java -cp dependencies/java-cup-11b.jar:. KEDParser InputFile.mj
 **Types**  
 
 `true` = `gospel`  
-`false` = `bull`
+`false` = `bull`  
 `null` = `nattin`
 
 
@@ -65,6 +65,14 @@ java -cp dependencies/java-cup-11b.jar:. KEDParser InputFile.mj
 ```
     eraGoOnSure(a == 2){
       a = 5
+    }
+```
+
+*The `KED` equivalent of a `for` loop*
+
+```
+    eraSureLook(int c = 0; c < 1; c = (c+1)){
+        a = 6
     }
 ```
 

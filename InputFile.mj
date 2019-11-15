@@ -6,18 +6,25 @@
     a = 5;
     b = gospel;
 
+    // if, else if, else
     eh (a == 2) {
-      a = 4
+      a = 1
     } 
     orEh (b == bull) {
-      a = 7
+      a = 3
     }
     orEvenJust {
       a = 4
     };
 
+    // while loop
     eraGoOnSure(a == 2){
     	a = 5
+    };
+
+    // for loop
+    eraSureLook(int c = 0; c < 1; c = (c+1)){
+        a = 6
     }
 
 }
