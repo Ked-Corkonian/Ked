@@ -74,6 +74,7 @@ statement ::= if_statement
           | for_statement
           | while_statement
           | assignment_statement
+          | statement SEMICOLON
           | local_variable_declaration; /* given below but not declared here */
 
 if_statement  ::= IF LPAREN boolean_expression RPAREN statement_block

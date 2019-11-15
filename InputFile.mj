@@ -8,23 +8,23 @@
 
     // if, else if, else
     eh (a == 2) {
-      a = 1
+      a = 1 like
     } 
     orEh (b == bull) {
-      a = 3
+      a = 3 like
     }
     orEvenJust {
-      a = 4
+      a = 4 like
     } like
 
     // while loop
     eraGoOnSure(a == 2){
-    	a = 5
+    	a = 5 like
     } like
 
     // for loop
     eraSureLook(int c = 0 like c < 1 like c = (c+1)){
-        a = 6
-    }
+        a = 6 like
+    } like
 
 }
