@@ -34,6 +34,13 @@ java -cp dependencies/java-cup-11b.jar:. KEDParser InputFile.mj
 
 ## Currently parsable
 
+*In`KED` the equivalent of a `;` is `like`. Note that there is a space before the `like`*  
+
+```
+    a = 5 like
+    b = gospel like
+```
+
 **Types**  
 
 `true` = `gospel`  

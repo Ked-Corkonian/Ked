@@ -3,8 +3,8 @@
  * This input IS valid and should parse correctly
  */
 {
-    a = 5;
-    b = gospel;
+    a = 5 like
+    b = gospel like
 
     // if, else if, else
     eh (a == 2) {
@@ -15,15 +15,15 @@
     }
     orEvenJust {
       a = 4
-    };
+    } like
 
     // while loop
     eraGoOnSure(a == 2){
     	a = 5
-    };
+    } like
 
     // for loop
-    eraSureLook(int c = 0; c < 1; c = (c+1)){
+    eraSureLook(int c = 0 like c < 1 like c = (c+1)){
         a = 6
     }
 
