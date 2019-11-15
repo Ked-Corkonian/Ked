@@ -33,6 +33,7 @@ WHITESPACE = [\ \t\r\n]+
 <YYINITIAL> "class" { return new MinijavaToken (MinijavaSymbol.CLASS, yychar, yychar + 5, yytext(), yyline); }
 <YYINITIAL> "static" { return new MinijavaToken (MinijavaSymbol.STATIC, yychar, yychar + 6, yytext(), yyline); }
 <YYINITIAL> "for" { return new MinijavaToken (MinijavaSymbol.FOR, yychar, yychar + 3, yytext(), yyline); }
+<YYINITIAL> "eraGoOnSure" { return new MinijavaToken (MinijavaSymbol.WHILE, yychar, yychar + 11, yytext(), yyline); }
 <YYINITIAL> "int" { return new MinijavaToken (MinijavaSymbol.INT, yychar, yychar + 3, yytext(), yyline); }
 <YYINITIAL> "boolean" { return new MinijavaToken (MinijavaSymbol.BOOLEAN, yychar, yychar + 7, yytext(), yyline); }
 <YYINITIAL> "float" { return new MinijavaToken (MinijavaSymbol.FLOAT, yychar, yychar + 5, yytext(), yyline); }

@@ -14,6 +14,10 @@
     }
     orEvenJust {
       a = 4
-    }
+    };
+
+    eraGoOnSure(a == 2){
+    	a = 5
+    };
 
 }

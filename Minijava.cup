@@ -27,7 +27,7 @@ terminal  STATIC, FINAL, PUBLIC, PROTECTED, PRIVATE;
 terminal  CLASS;
 terminal  VOID;
 terminal  IF, ELSE, ELSEIF;
-terminal  FOR; 
+terminal  FOR, WHILE; 
 terminal  RETURN; 
 terminal  THIS; 
 terminal  NEW; 
@@ -49,7 +49,7 @@ terminal  NULL_LITERAL;
 //
 
 non terminal goal, statement_block, statement_list, statement, if_statement, else_statement, elseif_statement;
-non terminal for_statement, for_init, for_update, assignment_statement;
+non terminal for_statement, for_init, for_update, assignment_statement, while_statement;
 non terminal local_variable_declaration, variable_type, boolean_expression;
 non terminal expression, literal;
 
@@ -72,6 +72,7 @@ statement ::= if_statement
           | else_statement
           | elseif_statement
           | for_statement
+          | while_statement
           | assignment_statement
           | local_variable_declaration; /* given below but not declared here */
 
@@ -85,6 +86,8 @@ elseif_statement ::= if_statement ELSEIF LPAREN boolean_expression RPAREN statem
 
 for_statement ::= FOR LPAREN for_init SEMICOLON boolean_expression SEMICOLON 
   for_update RPAREN statement_block;
+
+while_statement ::= WHILE LPAREN boolean_expression RPAREN statement_block;
 
 for_init   ::= local_variable_declaration;
 
