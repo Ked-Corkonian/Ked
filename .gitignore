@@ -2,3 +2,8 @@
 .idea/*
 
 *.iml
+*.DS_Store
+*.class
+*MinijavaLexer.java
+*MinijavaParser.java
+*MinijavaSymbol.java

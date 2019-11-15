@@ -1,0 +1,23 @@
+/**
+ * Sample input 
+ * This input IS valid and should parse correctly
+ */
+{
+    a = 5;
+    b = gospel;
+
+    eh (a == 2) {
+      a = 4
+    } 
+    orEh (b == bull) {
+      a = 7
+    }
+    orEvenJust {
+      a = 4
+    };
+
+    eraGoOnSure(a == 2){
+    	a = 5
+    };
+
+}

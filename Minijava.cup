@@ -1,0 +1,118 @@
+// need older version of jflex to generate the Lexer correctly
+// java -cp dependencies/java-cup-11b.jar:. java_cup.Main -parser MinijavaParser -symbols MinijavaSymbol < Minijava.cup
+// javac -cp dependencies/java-cup-11b.jar:. MinijavaSymbol.java MinijavaToken.java MinijavaLexer.java MinijavaParser.java KEDParser.java
+// java -cp dependencies/java-cup-11b.jar:. KEDParser InputFile.mj 
+
+
+import java_cup.runtime.*;
+import java.io.FileInputStream;
+
+parser code {:
+
+  public MinijavaParser (String filename) throws Exception {
+      this (new MinijavaLexer (new FileInputStream (filename)));
+  }
+:};
+
+terminal  IMPORT;  
+terminal  BOOLEAN;     
+terminal  INT;          
+terminal  FLOAT;         
+terminal  LBRACK, RBRACK; 
+terminal  IDENTIFIER;      
+terminal  DOT;             
+terminal  SEMICOLON, MULT, COMMA, LBRACE, RBRACE, EQ;
+terminal  LPAREN, RPAREN;
+terminal  STATIC, FINAL, PUBLIC, PROTECTED, PRIVATE;    
+terminal  CLASS;
+terminal  VOID;
+terminal  IF, ELSE, ELSEIF;
+terminal  FOR, WHILE; 
+terminal  RETURN; 
+terminal  THIS; 
+terminal  NEW; 
+terminal  PLUS, MINUS, NOT, DIV, MOD;
+terminal  LT, GT, LTEQ, GTEQ; 
+terminal  EQEQ, NOTEQ; 
+terminal  ANDAND; 
+terminal  OROR; 
+
+terminal  INTEGER_LITERAL;
+terminal  FLOATING_POINT_LITERAL;
+terminal  BOOLEAN_LITERAL;
+terminal  STRING_LITERAL;
+terminal  NULL_LITERAL;
+
+
+//
+// TBD - Grammar, non-terminals and precedence rules
+//
+
+non terminal goal, statement_block, statement_list, statement, if_statement, else_statement, elseif_statement;
+non terminal for_statement, for_init, for_update, assignment_statement, while_statement;
+non terminal local_variable_declaration, variable_type, boolean_expression;
+non terminal expression, literal;
+
+/* Precedence */
+precedence nonassoc LT, LTEQ, GT, GTEQ, EQEQ, NOTEQ, ANDAND, OROR;
+precedence left PLUS, MINUS;
+precedence left MULT, DIV, MOD;
+precedence right NOT;
+
+/* grammar */
+
+goal ::= statement_block;
+
+statement_block ::= LBRACE statement_list RBRACE;
+
+statement_list  ::= statement
+                  | statement SEMICOLON statement_list;
+
+statement ::= if_statement
+          | else_statement
+          | elseif_statement
+          | for_statement
+          | while_statement
+          | assignment_statement
+          | local_variable_declaration; /* given below but not declared here */
+
+if_statement  ::= IF LPAREN boolean_expression RPAREN statement_block
+                | IF LPAREN boolean_expression RPAREN statement_block else_statement;
+
+else_statement  ::= if_statement ELSE statement_block;
+
+elseif_statement ::= if_statement ELSEIF LPAREN boolean_expression RPAREN statement_block
+                   | if_statement ELSEIF LPAREN boolean_expression RPAREN statement_block ELSE statement_block;
+
+for_statement ::= FOR LPAREN for_init SEMICOLON boolean_expression SEMICOLON 
+  for_update RPAREN statement_block;
+
+while_statement ::= WHILE LPAREN boolean_expression RPAREN statement_block;
+
+for_init   ::= local_variable_declaration;
+
+for_update ::= assignment_statement;
+
+assignment_statement ::= IDENTIFIER EQ expression;
+
+local_variable_declaration ::= variable_type IDENTIFIER EQ expression
+                             | variable_type IDENTIFIER; /* was not given */
+
+variable_type ::= INT | FLOAT | BOOLEAN;
+
+boolean_expression ::= expression EQEQ expression
+                     | expression NOTEQ expression
+                     | expression LT expression /* boolean_expression from here down not given */
+                     | expression LTEQ expression
+                     | expression GT expression
+                     | expression GTEQ expression;
+
+expression ::= IDENTIFIER
+             | literal
+             | expression PLUS expression
+             | expression MINUS expression
+             | expression DIV expression
+             | expression MULT expression
+             | LPAREN expression RPAREN;
+
+literal ::= INTEGER_LITERAL | FLOATING_POINT_LITERAL | BOOLEAN_LITERAL;
