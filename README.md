@@ -32,4 +32,41 @@ java -cp dependencies/java-cup-11b.jar:. KEDParser InputFile.mj
  }
 ```
 
+## Currently parsable
+
+**Types**  
+
+`true` = `gospel`  
+`false` = `bull`
+`null` = `nattin`
+
+
+**Conditional statements**  
+
+*The `KED` equivalent of a `if`, `else if`, `else`*  
+
+```
+    eh (a == 2) {
+      a = 4
+    } 
+    orEh (b == 1) {
+      a = 7
+    }
+    orEvenJust {
+      a = 4
+    };
+
+```
+
+**Loops**  
+
+*The `KED` equivalent of a `while` loop*  
+
+```
+    eraGoOnSure(a == 2){
+      a = 5
+    }
+```
+
+
 Created by [Conor O'Donoghue](https://github.com/ConorOd) and [Deirdre Hegarty](https://github.com/deehegarty), inspired by https://adam-lynch.github.io/ked/
